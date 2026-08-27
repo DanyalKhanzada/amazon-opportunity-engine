@@ -150,16 +150,30 @@ Major architectural changes receive new versions. Bugs receive patch versions pl
 
 ---
 
-## 🧩 System boundaries
+## 🧩 Public showcase + private core
 
-The broader operating system is deliberately split across tools:
+This project deliberately uses a two-repository architecture:
 
-- **Notion** → research dossiers, coverage maps, evidence, decision logs, GREEN pool
-- **GitHub** → deterministic logic, schemas, regression tests, version history, change control
-- **Data providers / web research** → current market evidence
-- **Human judgment** → final capital allocation
+```text
+PUBLIC — amazon-opportunity-engine
+├── architecture
+├── philosophy
+├── sanitized examples
+├── roadmap
+└── progress / learnings
 
-The repository is intended to become the executable specification of the research model — not a dumping ground for raw notes.
+PRIVATE — amazon-opportunity-engine-core
+├── exact model configuration
+├── scoring + hard-gate logic
+├── fee normalization
+├── discovery heuristics
+├── regression tests + CI
+└── internal research mechanics
+```
+
+The public repository shows **what is being built and why**. The private core preserves **how the competitive logic actually works**.
+
+That separation lets the project be visible without turning proprietary research mechanics into a copyable playbook.
 
 ---
 
@@ -181,22 +195,15 @@ No quota-filling. No threshold drift.
 
 ---
 
-## 🧱 Repository roadmap
+## 🧭 Broader operating system
 
-```text
-amazon-opportunity-engine/
-├── docs/          # architecture + decision records
-├── schemas/       # normalized candidate/evidence objects
-├── rules/         # hard gates + deterministic controls
-├── scoring/       # score and confidence logic
-├── economics/     # fee, margin, capital calculations
-├── discovery/     # bounded candidate generators
-├── tests/         # regression + invariants
-├── configs/       # versioned strategy configuration
-└── CHANGELOG.md
-```
+- **Notion** → research dossiers, coverage maps, evidence, decision logs, GREEN pool
+- **Public GitHub** → architecture, philosophy, sanitized progress
+- **Private GitHub core** → deterministic logic, schemas, tests, configs, exact decision mechanics
+- **Data providers / web research** → current market evidence
+- **Human judgment** → final capital allocation
 
-> **Note:** the repository is currently public. Proprietary underwriting formulas, exact thresholds, research heuristics, and internal opportunity data are intentionally not published here while visibility remains public.
+The system is designed so every costly mistake can become a rule, test, or versioned learning rather than being forgotten.
 
 ---
 
