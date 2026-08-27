@@ -5,7 +5,8 @@
 ### An evidence-driven product discovery & underwriting system for finding exceptional Amazon opportunities — repeatedly.
 
 ![Status](https://img.shields.io/badge/status-active%20research-2ea44f?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-v1.1-0969da?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.1.1-0969da?style=for-the-badge)
+![Core CI](https://img.shields.io/badge/private%20core-CI%20passing-238636?style=for-the-badge)
 ![Goal](https://img.shields.io/badge/goal-20%20genuine%20GREENs-238636?style=for-the-badge)
 ![Method](https://img.shields.io/badge/method-gates%20%3E%20score%20%3E%20diligence-6f42c1?style=for-the-badge)
 
@@ -89,7 +90,7 @@ Not every anomaly is an opportunity. Change signals only generate hypotheses; th
 
 A discovery system can become very good at finding what it already believes is attractive.
 
-This engine therefore includes a **false-negative audit loop**: a small, stratified sample of rejected opportunities is periodically re-examined to detect whether specific gates, assumptions, or heuristics are killing real winners.
+This engine therefore includes a **false-negative audit loop**: a small, deliberately mixed sample of rejected opportunities is periodically re-examined to detect whether specific gates, assumptions, or heuristics are killing real winners.
 
 ```mermaid
 flowchart LR
@@ -106,6 +107,23 @@ flowchart LR
     J --> K[Learning Loop]
     K --> B
 ```
+
+---
+
+## ✅ v1.1.1 implementation status
+
+The approved discovery-quality architecture is now implemented in the private core and protected by automated regression tests.
+
+At a public level, the hardening adds:
+
+- provenance-aware validation for emerging change signals;
+- cross-source recurrence requirements for workaround/substitution discoveries;
+- stratified + blind-random false-negative auditing;
+- a protected independent-exploration reserve;
+- strict separation between **discovery** and **underwriting** — discovery signals never receive a score bonus or bypass normal gates;
+- versioned rollback paths and CI regression checks.
+
+The exact thresholds, scoring implementation, heuristics, and internal research mechanics remain private.
 
 ---
 
@@ -146,7 +164,7 @@ monitor + rollback if needed
 
 Major architectural changes receive new versions. Bugs receive patch versions plus an impact audit of prior decisions.
 
-**v1.0 remains the rollback baseline. v1.1 adds discovery-quality enhancements without weakening the investment standard.**
+**v1.0 remains the architecture rollback baseline. v1.1.1 is the hardened implementation of the approved v1.1 discovery-quality additions.**
 
 ---
 
