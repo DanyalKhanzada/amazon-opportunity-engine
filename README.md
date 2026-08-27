@@ -5,7 +5,7 @@
 ### An evidence-driven product discovery & underwriting system for finding exceptional Amazon opportunities — repeatedly.
 
 ![Status](https://img.shields.io/badge/status-active%20research-2ea44f?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-v1.1.2-0969da?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.1.3-0969da?style=for-the-badge)
 ![Core CI](https://img.shields.io/badge/private%20core-CI%20passing-238636?style=for-the-badge)
 ![Goal](https://img.shields.io/badge/goal-20%20genuine%20GREENs-238636?style=for-the-badge)
 ![Method](https://img.shields.io/badge/method-gates%20%3E%20score%20%3E%20diligence-6f42c1?style=for-the-badge)
@@ -81,7 +81,7 @@ A dedicated exploration reserve protects the engine from becoming trapped by its
 
 ### The question we want the system asking
 
-> **What changed materially, unexpectedly, and persistently — and is that change economically actionable?**
+> **What changed materially, unexpectedly, and persistently — and is that change economically actionable for a new entrant?**
 
 Not every anomaly is an opportunity. Change signals only generate hypotheses; they never bypass normal underwriting.
 
@@ -111,13 +111,14 @@ flowchart LR
 
 ---
 
-## ✅ v1.1.2 implementation status
+## ✅ v1.1.3 implementation status
 
 The approved discovery-quality architecture is implemented in the private core and protected by automated regression tests.
 
 At a public level, the hardening includes:
 
 - provenance-aware validation for emerging change signals;
+- explicit skepticism toward changes that are not material, unexpected, persistent, and plausibly actionable;
 - cross-source recurrence requirements for workaround/substitution discoveries;
 - stratified + blind-random false-negative auditing;
 - a protected independent-exploration reserve;
@@ -166,7 +167,7 @@ monitor + rollback if needed
 
 Major architectural changes receive new versions. Bugs and bounded behavior clarifications receive patch versions plus impact checks.
 
-**v1.0 remains the architecture rollback baseline. v1.1.2 is the current implementation of the approved v1.1 discovery-quality architecture.**
+**v1.0 remains the architecture rollback baseline. v1.1.3 is the current implementation of the approved v1.1 discovery-quality architecture; v1.1.2 remains the immediate rollback baseline.**
 
 ---
 
