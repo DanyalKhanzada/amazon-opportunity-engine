@@ -5,7 +5,7 @@
 ### An evidence-driven product discovery & underwriting system for finding exceptional Amazon opportunities — repeatedly.
 
 ![Status](https://img.shields.io/badge/status-active%20research-2ea44f?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-v1.1.1-0969da?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.1.2-0969da?style=for-the-badge)
 ![Core CI](https://img.shields.io/badge/private%20core-CI%20passing-238636?style=for-the-badge)
 ![Goal](https://img.shields.io/badge/goal-20%20genuine%20GREENs-238636?style=for-the-badge)
 ![Method](https://img.shields.io/badge/method-gates%20%3E%20score%20%3E%20diligence-6f42c1?style=for-the-badge)
@@ -75,6 +75,7 @@ It combines signals such as:
 - external-to-Amazon signals
 - workaround and substitution behavior
 - temporal change detection
+- incumbent displacement / share-migration patterns
 
 A dedicated exploration reserve protects the engine from becoming trapped by its own previous discoveries.
 
@@ -110,20 +111,21 @@ flowchart LR
 
 ---
 
-## ✅ v1.1.1 implementation status
+## ✅ v1.1.2 implementation status
 
-The approved discovery-quality architecture is now implemented in the private core and protected by automated regression tests.
+The approved discovery-quality architecture is implemented in the private core and protected by automated regression tests.
 
-At a public level, the hardening adds:
+At a public level, the hardening includes:
 
 - provenance-aware validation for emerging change signals;
 - cross-source recurrence requirements for workaround/substitution discoveries;
 - stratified + blind-random false-negative auditing;
 - a protected independent-exploration reserve;
 - strict separation between **discovery** and **underwriting** — discovery signals never receive a score bonus or bypass normal gates;
+- a named **incumbent displacement / share migration** pattern that looks for persistent movement from established sellers toward multiple newer offers, while guarding against temporary or operational explanations;
 - versioned rollback paths and CI regression checks.
 
-The exact thresholds, scoring implementation, heuristics, and internal research mechanics remain private.
+The exact thresholds, scoring implementation, corroboration rules, heuristics, and internal research mechanics remain private.
 
 ---
 
@@ -162,9 +164,9 @@ versioned release
 monitor + rollback if needed
 ```
 
-Major architectural changes receive new versions. Bugs receive patch versions plus an impact audit of prior decisions.
+Major architectural changes receive new versions. Bugs and bounded behavior clarifications receive patch versions plus impact checks.
 
-**v1.0 remains the architecture rollback baseline. v1.1.1 is the hardened implementation of the approved v1.1 discovery-quality additions.**
+**v1.0 remains the architecture rollback baseline. v1.1.2 is the current implementation of the approved v1.1 discovery-quality architecture.**
 
 ---
 
