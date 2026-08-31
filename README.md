@@ -2,15 +2,15 @@
 
 # ⚡ Amazon Opportunity Engine
 
-### An evidence-driven product discovery & underwriting system for finding exceptional Amazon opportunities — repeatedly.
+### An evidence-driven discovery, falsification, underwriting and learning system for finding exceptional Amazon opportunities — repeatedly.
 
 ![Status](https://img.shields.io/badge/status-active%20research-2ea44f?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-v1.1.3-0969da?style=for-the-badge)
-![Core CI](https://img.shields.io/badge/private%20core-CI%20passing-238636?style=for-the-badge)
+![Core](https://img.shields.io/badge/core-v1.4.15-0969da?style=for-the-badge)
+![Underwriting](https://img.shields.io/badge/underwriting-frozen-238636?style=for-the-badge)
 ![Goal](https://img.shields.io/badge/goal-20%20genuine%20GREENs-238636?style=for-the-badge)
-![Method](https://img.shields.io/badge/method-gates%20%3E%20score%20%3E%20diligence-6f42c1?style=for-the-badge)
+![Method](https://img.shields.io/badge/method-discover%20%3E%20falsify%20%3E%20gate%20%3E%20underwrite-6f42c1?style=for-the-badge)
 
-**Discover broadly. Reject aggressively. Underwrite deeply. Learn continuously.**
+**Discover broadly. Reject aggressively. Preserve evidence. Underwrite only what survives.**
 
 </div>
 
@@ -22,111 +22,243 @@ Most product-research systems optimize for finding *more candidates*.
 
 This system optimizes for something harder:
 
-> **Finding a small number of unusually strong opportunities while rejecting bad capital deployments as early and cheaply as possible.**
+> **Finding a small number of unusually strong opportunities while rejecting bad capital deployments as early, cheaply and honestly as possible.**
 
 The operating target is a pool of **20 products with genuine GREEN status**. The GREEN standard is not lowered to fill the pool.
 
+The engine is deliberately designed to separate:
+
+- discovery from underwriting;
+- evidence from narrative;
+- estimates from observations;
+- current truth from historical truth;
+- research authority from execution authority.
+
 ---
 
-## 🧠 Core philosophy
+## 🧠 Current operating architecture
 
 ```text
-Broad discovery
-      ↓
+Opportunity universe
+        ↓
+Territory + scenario coverage
+        ↓
+Independent discovery generators
+        ↓
+Candidate hypothesis
+        ↓
 Cheap falsification
-      ↓
+        ↓
+Candidate identity / market resolution
+        ↓
+Candidate Lock
+        ↓
+Audit
+        ↓
 Hard gates
-      ↓
-Market structure
-      ↓
-Product + customer evidence
-      ↓
-Economics + capital efficiency
-      ↓
-Stress testing + red team
-      ↓
-GREEN pool
-      ↓
-Compare the survivors
+        ↓
+Evidence-backed underwriting
+        ↓
+Decision snapshot
+        ↓
+Append-only decision history
+        ↓
+Outcome calibration / learning
 ```
 
-The model is intentionally designed to say **no** most of the time.
+A promising product is a hypothesis until it survives the governed chain.
 
-A high score cannot rescue a fatal weakness. Missing critical evidence does not become optimism. A promising product is treated as a hypothesis until it survives underwriting.
+A high weighted score cannot rescue a fatal weakness. Missing critical evidence does not become optimism. Historical evidence cannot be silently rewritten after the fact.
 
 ---
 
 ## 🔭 Discovery engine
 
-The discovery layer searches the Amazon opportunity universe through multiple independent paths rather than relying on one Black Box-style filter.
+Discovery does not rely on one Black Box-style filter or one keyword list.
 
-It combines signals such as:
+The engine searches through multiple market situations, including:
 
-- category and JTBD frontier exploration
-- young-entrant success
-- market fragmentation
-- keyword and demand anomalies
-- complaint clusters
-- premiumization
-- supplier and manufacturing changes
-- dimensional / fee engineering
-- cross-category migration
-- replacement and compatibility friction
-- external-to-Amazon signals
-- workaround and substitution behavior
-- temporal change detection
-- incumbent displacement / share-migration patterns
+- emerging demand;
+- incumbent disruption / share migration;
+- broken-product customer pain;
+- vacated demand;
+- premiumization and trade-up;
+- supply-side or dimensional unlocks;
+- behavior and category migration;
+- weak market ownership;
+- portfolio / ecosystem wedges.
 
-A dedicated exploration reserve protects the engine from becoming trapped by its own previous discoveries.
+Those scenarios are explored through independent generators such as customer complaints, young-entrant success, keyword anomalies, supplier innovation, dimensional engineering, replacement friction, external-to-Amazon signals, temporal change, and blind independent exploration.
 
-### The question we want the system asking
+A protected exploration reserve prevents the engine from searching only where it has already found winners.
 
-> **What changed materially, unexpectedly, and persistently — and is that change economically actionable for a new entrant?**
+### Governing discovery question
 
-Not every anomaly is an opportunity. Change signals only generate hypotheses; they never bypass normal underwriting.
+> **What changed materially, unexpectedly and persistently — and is that change economically actionable for a new entrant?**
+
+Discovery evidence can create a candidate. It cannot grant underwriting points or bypass normal diligence.
+
+---
+
+## 🧭 Market resolution before market conclusions
+
+A keyword is not automatically a market.
+
+Broad search terms can mix multiple product forms, use cases, pack sizes, materials and customer jobs. The engine therefore treats search results as discovery evidence until the actual competitive market system is resolved.
+
+```text
+keyword / ASIN signal
+        ↓
+product-form resolution
+        ↓
+JTBD / customer-use resolution
+        ↓
+parent / variation normalization
+        ↓
+coherent competitive market
+```
+
+This prevents unrelated products from being aggregated into fake demand or fake competition.
 
 ---
 
 ## 🛡️ Anti-bias design
 
-A discovery system can become very good at finding what it already believes is attractive.
+The engine assumes it can become biased by its own success.
 
-This engine therefore includes a **false-negative audit loop**: a small, deliberately mixed sample of rejected opportunities is periodically re-examined to detect whether specific gates, assumptions, or heuristics are killing real winners.
+It therefore includes:
 
-```mermaid
-flowchart LR
-    A[Universe] --> B[Coverage / Frontier]
-    B --> C[Candidate Generators]
-    C --> D[Cheap Screen]
-    D --> E{Hard Gates}
-    E -->|Fail| F[Reject]
-    E -->|Pass| G[Deep Underwriting]
-    G --> H{GREEN?}
-    H -->|No| F
-    H -->|Yes| I[GREEN Pool]
-    F --> J[False-Negative Audit]
-    J --> K[Learning Loop]
-    K --> B
-```
+- a protected independent-exploration floor;
+- append-only candidate-stage history;
+- false-negative audits on rejected opportunities;
+- blind-random reject sampling;
+- explicit scenario-gap observations when the current taxonomy may be incomplete;
+- seller-identity normalization before declaring incumbent displacement;
+- zero scoring authority for discovery provenance;
+- explicit separation between UNKNOWN and negative evidence.
+
+A scenario gap may be observed repeatedly and recommended for controlled testing, but it cannot silently rewrite the canonical scenario registry.
 
 ---
 
-## ✅ v1.1.3 implementation status
+## 🔒 Candidate and evidence custody
 
-The approved discovery-quality architecture is implemented in the private core and protected by automated regression tests.
+Modern governed runs preserve the identity of the opportunity being researched.
 
-At a public level, the hardening includes:
+The system binds together, at progressively deeper stages:
 
-- provenance-aware validation for emerging change signals;
-- explicit skepticism toward changes that are not material, unexpected, persistent, and plausibly actionable;
-- cross-source recurrence requirements for workaround/substitution discoveries;
-- stratified + blind-random false-negative auditing;
-- a protected independent-exploration reserve;
-- strict separation between **discovery** and **underwriting** — discovery signals never receive a score bonus or bypass normal gates;
-- a named **incumbent displacement / share migration** pattern that looks for persistent movement from established sellers toward multiple newer offers, while guarding against temporary or operational explanations;
-- versioned rollback paths and CI regression checks.
+- hunt / marketplace provenance;
+- candidate identity and market wedge;
+- candidate lock;
+- audit context and replayed audit result;
+- hard-gate evidence and authority;
+- evidence-backed underwriting assessments;
+- exact underwriting model reference;
+- decision snapshot;
+- append-only persisted decision package.
 
-The exact thresholds, scoring implementation, corroboration rules, heuristics, and internal research mechanics remain private.
+The goal is not merely to produce a recommendation. The goal is to be able to answer later:
+
+> **What exactly did we believe, based on what evidence, under which model, at which point in time?**
+
+---
+
+## 💰 Economics are normalized before they become decision inputs
+
+The engine treats economic input semantics as part of decision integrity.
+
+Examples of hardened boundaries include:
+
+- Amazon fee inputs must be normalized before contribution economics use them;
+- supplier unit labels such as `piece`, `set` or `pair` do not determine sellable-unit economics;
+- supplier-trade-unit to retail-sellable-unit relationships must be explicit before a factory quote can be normalized;
+- a normalized supplier factory quote is **not** automatically landed COGS;
+- estimates, calculated values, observed values and unknowns must remain distinguishable.
+
+The engine deliberately avoids inventing universal landed-cost or dimensional-weight rules before repeated real-world evidence justifies them.
+
+---
+
+## 🧾 Decision history and replayability
+
+Current state is a derived view over history rather than the only truth retained.
+
+Modern governed decisions preserve:
+
+- the recommendation at the time;
+- the final decision;
+- assumptions and blockers;
+- forecasts;
+- model identity;
+- evidence-backed dimension assessments;
+- supersession history;
+- later actual outcomes without rewriting the original forecast.
+
+This creates the foundation for prediction-versus-outcome calibration once enough real operating data exists.
+
+---
+
+## 🚦Research is not execution
+
+The engine now has an explicit operating boundary between research and outside-world actions.
+
+During research it may search, compare, falsify, inspect supplier catalogs, analyze patents, model economics and preserve evidence.
+
+It does **not** automatically gain authority to contact suppliers, order samples, commit capital, change live listings or modify advertising simply because a candidate looks promising.
+
+External execution requires a separate deliberate transition and human authorization.
+
+See [`RESEARCH_EXECUTION_BOUNDARY.md`](RESEARCH_EXECUTION_BOUNDARY.md).
+
+---
+
+## 🔄 Reality-driven engineering loop
+
+The engine is not improved by continuously adding features.
+
+```text
+live hunt / real failure
+        ↓
+attack the conclusion
+        ↓
+does existing architecture already handle it?
+   YES ─────────────→ do not change core
+    NO
+        ↓
+isolate smallest violated invariant
+        ↓
+red / adversarial test
+        ↓
+minimal implementation
+        ↓
+attack the implementation itself
+        ↓
+full regression
+        ↓
+versioned release
+        ↓
+freeze
+        ↓
+return to live hunts
+```
+
+The preferred outcome of many reviews is **NO CHANGE**. Avoiding an unnecessary rule is itself a successful engineering decision.
+
+---
+
+## 📈 Architecture evolution
+
+The project has moved through several distinct maturity layers:
+
+| Era | Primary improvement |
+|---|---|
+| **v1.0** | Frozen underwriting architecture, hard gates, economics and disciplined product selection baseline |
+| **v1.1** | Discovery-quality hardening: temporal change, workarounds, false-negative auditing, independent exploration, incumbent displacement |
+| **v1.2** | Discovery observability: Hunt Manifest, territories, scenarios, generators, coverage, memory and frontier |
+| **v1.3** | The engine can detect gaps in its own discovery taxonomy without self-modifying it |
+| **v1.4** | Institutional custody: decision history, deterministic run coordination, identity binding, model replay, evidence-backed dimensions, persistence, temporal integrity, hard-gate authority and supplier-unit evidence custody |
+
+The underwriting scoring model has intentionally remained frozen while surrounding evidence, governance, replayability and failure resistance have improved.
 
 ---
 
@@ -135,66 +267,41 @@ The exact thresholds, scoring implementation, corroboration rules, heuristics, a
 | Principle | Meaning |
 |---|---|
 | **Gates before scores** | Fatal weaknesses cannot be averaged away. |
-| **Evidence over narrative** | Observed, calculated, estimated, and unknown data stay separate. |
-| **Parent-level market structure** | One successful ASIN is not a market. |
+| **Evidence over narrative** | Observed, calculated, estimated and unknown facts stay distinct. |
+| **Market before keyword** | One query or one ASIN does not define the competitive system. |
+| **Identity before underwriting** | Candidate and market wedge cannot silently change mid-run. |
 | **Post-ad economics** | Attractive gross margin alone is insufficient. |
-| **Capital efficiency matters** | Profit is evaluated against working capital consumed. |
-| **Explainability first** | Important decisions must be traceable to evidence and rules. |
-| **Version everything** | Material model changes produce explicit versions and rollback paths. |
-| **Learn from rejects** | A dead product can still reveal a live problem, supplier capability, or adjacency. |
-
----
-
-## 🔄 Agile architecture
-
-The engine is not silently rewritten when a new idea appears.
-
-```text
-observation / failure
-        ↓
-hypothesis
-        ↓
-experimental change
-        ↓
-old-vs-new comparison
-        ↓
-promote or reject
-        ↓
-versioned release
-        ↓
-monitor + rollback if needed
-```
-
-Major architectural changes receive new versions. Bugs and bounded behavior clarifications receive patch versions plus impact checks.
-
-**v1.0 remains the architecture rollback baseline. v1.1.3 is the current implementation of the approved v1.1 discovery-quality architecture; v1.1.2 remains the immediate rollback baseline.**
+| **Capital efficiency matters** | Profit is evaluated against capital consumed. |
+| **Replayability matters** | Important decisions should be reproducible from their stored inputs. |
+| **Version everything material** | Meaningful model or architecture changes receive explicit change control. |
+| **Learn from rejects** | A dead product can reveal a live customer problem, failure mode or adjacency. |
+| **Memory before adaptation** | Observe recurring patterns before changing allocation or scoring policy. |
+| **Research ≠ execution** | Evidence may justify more research without authorizing outside-world actions. |
 
 ---
 
 ## 🧩 Public showcase + private core
 
-This project deliberately uses a two-repository architecture:
-
 ```text
 PUBLIC — amazon-opportunity-engine
 ├── architecture
 ├── philosophy
-├── sanitized examples
-├── roadmap
-└── progress / learnings
+├── sanitized progress
+├── operating boundaries
+└── non-proprietary learnings
 
 PRIVATE — amazon-opportunity-engine-core
-├── exact model configuration
-├── scoring + hard-gate logic
-├── fee normalization
-├── discovery heuristics
+├── exact scoring / gate mechanics
+├── evidence and custody schemas
+├── discovery implementation
+├── model registry
+├── deterministic run coordination
+├── decision persistence
 ├── regression tests + CI
-└── internal research mechanics
+└── proprietary research mechanics
 ```
 
-The public repository shows **what is being built and why**. The private core preserves **how the competitive logic actually works**.
-
-That separation lets the project be visible without turning proprietary research mechanics into a copyable playbook.
+The public repository explains **what the system is and why it is designed this way**. The private core preserves the exact implementation and competitive logic.
 
 ---
 
@@ -202,15 +309,13 @@ That separation lets the project be visible without turning proprietary research
 
 GREEN is not “interesting.”
 
-GREEN means the opportunity has survived the required structural, economic, competitive, operational, legal/compliance, differentiation, confidence, and capital-efficiency tests at the current diligence stage.
-
-The target is:
+GREEN means the opportunity has survived the required structural, economic, competitive, operational, legal/compliance, differentiation, confidence and capital-efficiency tests at the current diligence stage.
 
 <div align="center">
 
 ## **20 genuine GREEN products → then compare the survivors.**
 
-No quota-filling. No threshold drift.
+No quota filling. No threshold drift. No winner by storytelling.
 
 </div>
 
@@ -218,20 +323,22 @@ No quota-filling. No threshold drift.
 
 ## 🧭 Broader operating system
 
-- **Notion** → research dossiers, coverage maps, evidence, decision logs, GREEN pool
-- **Public GitHub** → architecture, philosophy, sanitized progress
-- **Private GitHub core** → deterministic logic, schemas, tests, configs, exact decision mechanics
-- **Data providers / web research** → current market evidence
-- **Human judgment** → final capital allocation
+- **Private engine core** → deterministic logic, governance, tests and decision custody
+- **Research records** → evidence, candidate history, rejects and unresolved questions
+- **Data providers / web research** → current external evidence
+- **Public repository** → sanitized architecture and progress
+- **Human judgment** → final capital allocation and execution authorization
 
-The system is designed so every costly mistake can become a rule, test, or versioned learning rather than being forgotten.
+The long-term objective is not an engine that is never wrong.
+
+It is an engine that makes its assumptions visible, preserves its mistakes, learns from outcomes and becomes **progressively harder to fool**.
 
 ---
 
 <div align="center">
 
-### Build a system that gets harder to fool every time it is wrong.
+### Build a system that gets harder to fool every time reality disagrees with it.
 
-**Amazon Opportunity Engine** · Evidence-driven discovery · Adversarial underwriting · Continuous learning
+**Amazon Opportunity Engine** · Evidence-driven discovery · Adversarial underwriting · Institutional memory
 
 </div>
